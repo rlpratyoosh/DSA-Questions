@@ -1,8 +1,11 @@
+// Rotate Array, LeetCode qurstion 189
+// Non-optimal Approach O(n*k)
+
 #include <iostream>
 #include <vector>
 using namespace std;
 
-void rotate(vector<int> &nums){
+void rotate(vector<int> &nums){ // Rotate the array once
     int n = nums.size();
     int temp = nums[n-1];
     for(int i = n-1; i > 0; i--){
@@ -13,9 +16,12 @@ void rotate(vector<int> &nums){
 
 void rotaten(vector<int> &nums, int k){
     int n = nums.size();
-    if(k == n) return;
-    if(k > n) k = k - n;
-    for(int i = 0; i < k; i++){
+    if(k%nums.size() == 0) return; // Return  if k is multiple of the size of the array
+    if(k>nums.size()) { // Modify k if it is greater thean the size of the array
+        int q = k/nums.size();
+        k = k - nums.size()*q;
+    }
+    for(int i = 0; i < k; i++){ // Rotate the array k times
         rotate(nums);
     }
 }
