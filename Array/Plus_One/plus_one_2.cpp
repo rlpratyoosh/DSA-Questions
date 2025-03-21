@@ -1,3 +1,6 @@
+// LeetCode Problem 6 Plus One
+// Optmal Approach
+
 #include <iostream>
 #include <vector>
 using namespace std;
