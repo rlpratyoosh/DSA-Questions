@@ -1,10 +1,14 @@
+// Reverse the Array
+// Not on Leetcode
+// Optimal Approach
+
 #include <iostream>
 #include <vector>
 using namespace std;
 
 void reverse(vector<int> &nums){
-    int l = 0, r = nums.size()-1;
-    while(l<r){
+    int l = 0, r = nums.size()-1; // Intialzing two Pointers
+    while(l<r){ // Swap each opposited position
         swap(nums[l], nums[r]);
         l++;
         r--;
